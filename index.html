@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham Pawar</title>
+    <link rel="stylesheet" href="./certif.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Smooth scrolling CSS -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Modal uchun CSS */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal-content img {
+            max-width: 80vw;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-gradient-to-r from-gray-50 to-gray-100 text-gray-800">
+
+
+    
+
+    <!-- Navbar -->
+    <nav class="bg- shadow-md fixed w-full z-10 top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-around items-center">
+            <a href="#" class="text-xl font-semibold text-gray-800">Portfolio</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-indigo-500">Home</a>
+                <a href="#about" class="hover:text-indigo-500">About</a>
+                <a href="#achievements" class="hover:text-indigo-500">Achievements</a>
+                <a href="#contact" class="hover:text-indigo-500">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home"
+        class="h-screen flex items-center justify-center bg-gradient-to-r from-indigo-300 to-purple-500 text-center">
+        
+        <div>
+            <img src="./assets/photo_2024-11-10_17-29-16.jpg" alt="Profile photo" class="rounded-full w-32 h-32 md:w-48 md:h-48 ml-20"><br><br>
+
+            <h1 class="text-5xl font-bold text-white">Hello</h1>
+            <h2 class="text-4xl font-semibold text-white">I am Shubham Pawar.</h2>
+            <p class="text-lg text-white mt-4">WEB PENETRATION TESTER</p>
+            
+        </div>
+    </section>
+
+    
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <!-- <nav class="bg- shadow-md fixed w-full z-10 top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-around items-center">
+            <a href="#" class="text-xl font-semibold text-gray-800">Portfolio</a>
+            <div class="hidden md:flex space-x-6">
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- Certificate Container -->
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">My Certificates</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Certificate 1 -->
+            <div class="bg-white border rounded-lg shadow-md p-4">
+                <img src="./assets/1709474508527.jpeg" alt="Certificate 1" class="w-full h-48 object-cover rounded-md mb-4 cursor-pointer" onclick="openModal('./assets/1709474508527.jpeg')">
+                <h2 class="text-xl font-semibold text-gray-700 text-center">Ethical Hacking Essentials (EHE)</h2>
+                <p class="text-center text-gray-600 mt-2">Issued by: EC-Council</p>
+                <p class="text-center text-gray-600">Date: 25th Feb 2024</p>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="bg-white border rounded-lg shadow-md p-4">
+                <img src="./assets/1711546071985.jpeg" alt="Certificate 2" class="w-full h-48 object-cover rounded-md mb-4 cursor-pointer" onclick="openModal('./assets/1711546071985.jpeg')">
+                <h2 class="text-xl font-semibold text-gray-700 text-center">Introduction to Dark Web, Anonymity, and Cryptocurrency</h2>
+                <p class="text-center text-gray-600 mt-2">Issued by: EC-Council</p>
+                <p class="text-center text-gray-600">Date: 25th Feb 2024</p>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="bg-white border rounded-lg shadow-md p-4">
+                <img src="./assets/1725544508428.jpeg" alt="Certificate 3" class="w-full h-48 object-cover rounded-md mb-4 cursor-pointer" onclick="openModal('./assets/1725544508428.jpeg')">
+                <h2 class="text-xl font-semibold text-gray-700 text-center">Cybersecurity Virtual Internship</h2>
+                <p class="text-center text-gray-600 mt-2">Issued by: Annasaheb Dange College of Engineering and Technology</p>
+                <p class="text-center text-gray-600">Date: July - September 2024</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal (Katta ko'rinish) -->
+    <div id="modal" class="modal flex">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal()">×</button>
+            <img id="modalImage" src="" alt="Enlarged Certificate">
+        </div>
+    </div>
+
+    <script>
+        // Modalni ochish funksiyasi
+        function openModal(imageSrc) {
+            document.getElementById("modal").style.display = "flex";
+            document.getElementById("modalImage").src = imageSrc;
+        }
+
+        // Modalni yopish funksiyasi
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("modalImage").src = ""; // Rasmlarni tez yuklash uchun bo'sh qilish
+        }
+    </script>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-semibold mb-6">About me</h2>
+            <div class="flex flex-row md:flex-col md:items-center justify-center space-y-6 md:space-x-12 md:space-y-0">
+                <!-- Profile Image -->
+                <img src="./assets/photo_2024-11-10_17-29-16.jpg" alt="Profile photo" class="rounded-full w-32 h-32 md:w-48 md:h-48">
+                <br>
+                <!-- About Me Text -->
+                <div class="max-w-lg">
+                    <p>I'm Shubham Pawar, a cybersecurity enthusiast and dedicated web penetration tester, driven by a curiosity to uncover vulnerabilities and help organizations strengthen their digital security. I've had the privilege of finding and reporting bugs for platforms like NASA, CyberGhost, and QuickReel, diving deep into areas like input validation flaws, rate limiting, and sensitive data exposure. I'm all about learning continuously, especially in areas like Web 3.0, and I enjoy simplifying complex issues to make security insights accessible. I work mainly with Burp Suite, Kali Linux, and custom Python scripts, focusing on automating processes to get efficient results. My goal? To make a real impact in cybersecurity and push my skills to the next level....</p>
+
+                    <!-- Resume Download Link -->
+                    <a href="./assets/Shubham_pawar.pdf" download
+                        class="mt-4 inline-block bg-indigo-500 text-white px-6 py-3 rounded-lg hover:bg-indigo-600">
+                        Download My Resume!
+                    </a>
+
+                    <!-- Resume View Link -->
+                    <a href="./assets/Shubham_pawar.pdf" target="_blank"
+                        class="mt-4 inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 ml-4">
+                        View My Resume
+                    </a>
+                </div>
+                <br>
+
+                <br>
+            </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div id="achievements" class="py-16 bg-gray-100">
+            <!-- Particle component can be added here -->
+            <a class="text-4xl font-bold text-center mb-12" href="#">Achievements</a><br><br><br><br>
+          
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-4">
+              <div class="achievement-item">
+                <img src="./assets/yutuq/12.jpg" alt="Achievement 1" class="w-full h-auto rounded-lg shadow-lg" />
+              </div>
+              <div class="achievement-item">
+                <img src="./assets/yutuq/1724171577228.jpeg" alt="Achievement 2" class="w-full h-auto rounded-lg shadow-lg" />
+              </div>
+              <div class="achievement-item">
+                <img src="./assets/yutuq/23.jpg" alt="Achievement 3" class="w-full h-auto rounded-lg shadow-lg" />
+              </div>
+              <div class="achievement-item">
+                <img src="./assets/yutuq/AL_0410_02.jpg" alt="Achievement 4" class="w-full h-auto rounded-lg shadow-lg" />
+              </div>
+              <div class="achievement-item">
+                <img src="./assets/yutuq/Appreciation_letter (1)_page-0001.jpg" alt="Achievement 5" class="w-full h-auto rounded-lg shadow-lg" />
+              </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gradient-to-r from-purple-500 to-indigo-500 text-center text-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-semibold mb-6">Contact</h2><br>
+                <p class="mb-6">I will be happy to cooperate with you!</p><br><br><br>
+                <div class="grid gap-8 md:grid-cols-3">
+                    <div>
+                        <i class="text-4xl ti-mobile mb-4"></i>
+                        <p>📳8767240387</p>
+                    </div>
+                    <div>
+                        <i class="text-4xl ti-email mb-4"></i>
+                        <p>📩shubhammpawar7438@gmail.com</p>
+                    </div>
+                    <div>
+                        <i class="text-4xl ti-map-alt mb-4"></i>
+                        <p>📍Islampur Maharashtra 415409</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-4 bg-gray-800 text-center text-white">
+            <div class="container mx-auto">
+             
+                <p class="mt-4">© 2024 Shubham Pawar. All rights reserved. Created by Shamshidinov Mukhammad.</p>
+            </div>
+        </footer>
+
+</body>
+
+</html>
